@@ -6,7 +6,11 @@ $client = DynamoDbClient::factory(array(
     'region' => 'eu-west-1'  // replace with your desired region
 ));
 $tableNames = array();
-$tableName = 'ProductCatalog';
+
+
+
+
+$tableName = 'haythem';
 echo "Creating table $tableName..." . PHP_EOL;
 $response = $client->createTable(array(
     'TableName' => $tableName,
@@ -28,7 +32,10 @@ $response = $client->createTable(array(
     )
 ));
 $tableNames[] = $tableName;
-$tableName = 'Forum';
+
+
+
+$tableName = 'imen';
 echo "Creating table $tableName..." . PHP_EOL;
 $response = $client->createTable(array(
     'TableName' => $tableName,
@@ -50,7 +57,11 @@ $response = $client->createTable(array(
     )
 ));
 $tableNames[] = $tableName;
-$tableName = 'Thread';
+
+
+
+
+$tableName = 'nadhir';
 echo "Creating table $tableName..." . PHP_EOL;
 $response = $client->createTable(array(
     'TableName' => $tableName,
@@ -80,7 +91,11 @@ $response = $client->createTable(array(
     )
 ));
 $tableNames[] = $tableName;
-$tableName = 'Reply';
+
+
+
+
+$tableName = 'sami';
 echo "Creating table $tableName..." . PHP_EOL;
 $response = $client->createTable(array(
     'TableName' => $tableName,
@@ -132,6 +147,11 @@ $response = $client->createTable(array(
     )
 ));
 $tableNames[] = $tableName;
+
+
+
+
+
 foreach($tableNames as $tableName) {
     echo "Waiting for table $tableName to be created." . PHP_EOL;
     $client->waitUntilTableExists(array('TableName' => $tableName));
